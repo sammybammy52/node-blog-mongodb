@@ -4,12 +4,14 @@ const { result } = require('lodash');
 const { default: mongoose } = require('mongoose');
 const morgan = require('morgan');
 const blogRoutes = require('./routes/blogRoutes');
+const dotenv = require('dotenv/config');
 
 const app = express();
 
 //dbconn
+//create .env file and set dbURI = your mongo atlas connection string
 
-const dbURI = 'mongodb+srv://sammybammy52:akaragidi@cluster0.gq0g5.mongodb.net/nodetuts?retryWrites=true&w=majority';
+const dbURI = process.env.dbURI;
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
 .then((result) => app.listen(3000))
