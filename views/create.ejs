@@ -4,17 +4,56 @@
 <body>
   <%- include("./partials/nav.ejs") %>
 
-  <div class="create-blog content">
-    <form action="/blogs" method="POST">
-      <label for="title">Blog title:</label>
-      <input type="text" id="title" name="title" required>
-      <label for="snippet">Blog snippet:</label>
-      <input type="text" id="snippet" name="snippet" required>
-      <label for="body">Blog body:</label>
-      <textarea id="body" name="body" required></textarea>
-      <button>Submit</button>
-    </form>
+
+  <header class="masthead" style="background-image: url('/assets/img/post-bg.jpg')">
+    <div class="container position-relative px-4 px-lg-5">
+      <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+          <div class="post-heading">
+            <h1>
+              Create A Blog Post
+            </h1>
+            <h2 class="subheading">
+              let them hear you
+            </h2>
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="mb-4">
+    <div class="container px-4 px-lg-5">
+      <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+          
+          <form action="/blogs" method="POST">
+
+            <div class="mb-3">
+              <label for="title" class="form-label">Blog title:</label>
+              <input type="text" id="title" name="title" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="snippet" class="form-label">Blog snippet:</label>
+              <input type="text" id="snippet" name="snippet" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="body" class="form-label">Blog body:</label>
+              <textarea id="body" name="body" class="form-control" required></textarea>
+            </div>
+            
+            
+            
+            <button class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
+
+  
 
   <%- include("./partials/footer.ejs") %>
 </body>
